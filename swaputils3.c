@@ -6,7 +6,7 @@
 /*   By: tbalci <tbalci@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/08 01:20:35 by tbalci            #+#    #+#             */
-/*   Updated: 2023/11/21 02:40:51 by tbalci           ###   ########.fr       */
+/*   Updated: 2023/11/21 04:02:25 by tbalci           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,7 +59,6 @@ int	ftl(t_data *datas, int index)
 	i = 0;
 	j = 0;
 	temp = datas->b_min;
-	printf("ftl temp%d\n",temp);
 	while (datas->b_l > i)
 	{
 		if (temp < datas->b[i] && index > datas->b[i])
@@ -105,8 +104,6 @@ void	mcountinit(t_data *datas)
 		if (datas->a[i] > datas->b_min)
 		{
 			temp_i = ftl(datas, datas->a[i]);
-			printf("temp_i%d\n",temp_i);
-			printf("%d\n%d\n\n",first(datas,i), second(datas, temp_i));
 			datas->mcount[i] = first(datas, i) + 1 + second(datas, temp_i);
 		}
 		else
