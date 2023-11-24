@@ -19,11 +19,12 @@ void	ra(t_data *datas)
 	
 	i = 0;
 	temp = datas->a[0];
-	while (datas->ac - 1 > i)
+	while (datas->a_l > i)
 	{
 		datas->a[i] = datas->a[i + 1];
 		i++;
 	}
+	i--;
 	datas->a[i] = temp;
 	write(1, "ra\n", 3);
 }
@@ -35,11 +36,12 @@ void	rb(t_data *datas)
 	
 	i = 0;
 	temp = datas->b[0];
-	while (datas->ac - 1 > i)
+	while (datas->b_l > i)
 	{
 		datas->b[i] = datas->b[i + 1];
 		i++;
 	}
+	i--;
 	datas->b[i] = temp;
 	write(1, "rb\n", 3);
 }
@@ -51,19 +53,21 @@ void	rr(t_data *datas)
 	
 	i = 0;
 	temp = datas->b[0];
-	while (datas->ac - 1 > i)
+	while (datas->b_l > i)
 	{
 		datas->b[i] = datas->b[i + 1];
 		i++;
 	}
+	i--;
 	datas->b[i] = temp;
 	i = 0;
 	temp = datas->a[0];
-	while (datas->ac - 1 > i)
+	while (datas->a_l > i)
 	{
 		datas->a[i] = datas->a[i + 1];
 		i++;
 	}
+	i--;
 	datas->a[i] = temp;
 	write(1, "rr\n", 3);	
 }
@@ -73,9 +77,9 @@ void	rra(t_data *datas)
 	int	temp;
 	int	i;
 
-	i = datas->ac - 1;
-	temp = datas->a[datas->ac - 1];
-	while (0 < i)
+	i = datas->a_l;
+	temp = datas->a[datas->a_l - 1];
+	while (i > 0)
 	{
 		datas->a[i] = datas->a[i - 1];
 		i--;
@@ -89,8 +93,8 @@ void	rrb(t_data *datas)
 	int	temp;
 	int	i;
 
-	i = datas->ac - 1;
-	temp = datas->b[i];
+	i = datas->b_l;
+	temp = datas->b[i - 1];
 	while (i > 0)
 	{
 		datas->b[i] = datas->b[i - 1];

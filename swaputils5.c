@@ -14,9 +14,6 @@
 
 void	countfunca(t_data *datas, int index)
 {
-	int	i;
-	
-	i = 0;
 	datas->ra_c = 0;
 	datas->rra_c = 0;
 	while (index)
@@ -31,9 +28,6 @@ void	countfunca(t_data *datas, int index)
 
 void	countfuncb(t_data *datas, int index)
 {
-	int	i;
-	
-	i = 0;
 	datas->rb_c = 0;
 	datas->rrb_c = 0;
 	while (index)

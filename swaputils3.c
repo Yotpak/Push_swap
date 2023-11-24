@@ -101,6 +101,7 @@ void	mcountinit(t_data *datas)
 	i = 0;
 	while (i < datas->a_l)
 	{
+		bmin(datas);
 		if (datas->a[i] > datas->b_min)
 		{
 			temp_i = ftl(datas, datas->a[i]);

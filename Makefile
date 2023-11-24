@@ -1,9 +1,9 @@
-SRCS = init.c main.c utils.c swaputils.c swaputils2.c swaputils3.c swaputils4.c errorfunc.c swaputils5.c
+SRCS = main.c swaputils2.c swaputils3.c swaputils4.c swaputils5.c swaputils.c utils.c init.c
 
 
 NAME = push_swap
 CC = gcc
-CFLAGS = -Wall -Wextra -Werror
+CFLAGS = -fsantitize=address
 RM = rm -rf
 LIBC = ar -rcs
 LIBFT = ./libft/libft.a
@@ -11,7 +11,7 @@ LIBFT = ./libft/libft.a
 all: $(NAME)
 
 $(NAME): $(SRCS) $(LIBFT)
-	@$(CC) $(CFLAGS) $(LIBFT) $(SRCS) -o $(NAME) -g
+	@$(CC) $(SRCS) ./libft/libft.a -o $(NAME)
 
 clean:
 	@rm -rf $(NAME)

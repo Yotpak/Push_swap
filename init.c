@@ -16,13 +16,12 @@
 
 void	init_all(t_data *datas, int ac)
 {
-	datas->a = ft_calloc(sizeof(int), ac - 1);
-	datas->b = ft_calloc(sizeof(int), ac - 1);
 	datas->a_l = ac - 1;
-	datas->mcount = calloc(sizeof(int), datas->a_l - 2);
+	datas->a = malloc(sizeof(int) * ac);
+	datas->b = malloc(sizeof(int) * ac);
+	datas->mcount = malloc(sizeof(int) * datas->a_l + 1);
 	datas->b_l = 0;
 	datas->ac = ac - 1;
-	bmin(datas);
 	datas->rb_c = 0;
 	datas->rrb_c = 0;
 	// datas->mc = 0;

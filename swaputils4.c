@@ -39,7 +39,7 @@ int	minmove(t_data *datas)
 	temp = datas->mcount[0];
 	while (datas->a_l > i)
 	{
-		if (temp > datas->mcount[i])
+		if (datas->mcount[i] > temp)
 		{
 			temp = datas->mcount[i];
 			j = i;

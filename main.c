@@ -18,26 +18,32 @@
 	
 // }
 
+
+void print_stacks(t_data *data)
+{
+	int i = 1;
+	printf("	STACK A		\n---------------------\n");
+	while (i <= data->a_l)
+	{
+		printf("%d. index -> %d\n", i - 1, data->a[i-1]);
+		i++;
+	}
+
+	i = 1;
+	printf("	STACK B		\n---------------------\n");
+	while (i <= data->b_l)
+	{
+		printf("%d. index -> %d\n", i - 1, data->b[i-1]);
+		i++;
+	}
+}
+
 int main(int ac, char **av)
 {
 	t_data	*datas;
-	int	i;
 
-	i = 0;
 	datas = malloc(sizeof(t_data));
 	init_stack(av, datas, ac);
-	pb(datas);
-	pb(datas);
-	pb(datas);
-	pb(datas);
 	mcountinit(datas);
-	printf("datas->m%d\n",datas->m);
-	printf("%d\n",datas->mcount[0]);
-	printf("%d\n",datas->mcount[1]);
-	printf("%d\n",datas->mcount[2]);
-	printf("%d\n",datas->mcount[3]);
-	printf("%d\n",datas->mcount[4]);
-	printf("%d\n",datas->mcount[5]);
-	printf("%d\n",datas->mcount[6]);
-	printf("%d\n",datas->mcount[7]);
+	print_stacks(datas);
 }
