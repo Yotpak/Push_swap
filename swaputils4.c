@@ -6,7 +6,7 @@
 /*   By: tbalci <tbalci@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/17 22:44:29 by tbalci            #+#    #+#             */
-/*   Updated: 2023/11/21 02:37:09 by tbalci           ###   ########.fr       */
+/*   Updated: 2023/11/28 14:22:43 by tbalci           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ int	minmove(t_data *datas)
 	temp = datas->mcount[0];
 	while (datas->a_l > i)
 	{
-		if (datas->mcount[i] > temp)
+		if (temp > datas->mcount[i])
 		{
 			temp = datas->mcount[i];
 			j = i;

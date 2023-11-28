@@ -6,7 +6,7 @@
 /*   By: tbalci <tbalci@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/02 21:46:36 by tbalci            #+#    #+#             */
-/*   Updated: 2023/11/21 04:07:00 by tbalci           ###   ########.fr       */
+/*   Updated: 2023/11/28 19:24:41 by tbalci           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,21 +19,21 @@
 // }
 
 
-void print_stacks(t_data *data)
+void print_stacks(t_data *datas)
 {
 	int i = 1;
 	printf("	STACK A		\n---------------------\n");
-	while (i <= data->a_l)
+	while (i <= datas->a_l)
 	{
-		printf("%d. index -> %d\n", i - 1, data->a[i-1]);
+		printf("%d. index -> %d\n", i - 1, datas->a[i-1]);
 		i++;
 	}
 
 	i = 1;
 	printf("	STACK B		\n---------------------\n");
-	while (i <= data->b_l)
+	while (i <= datas->b_l)
 	{
-		printf("%d. index -> %d\n", i - 1, data->b[i-1]);
+		printf("%d. index -> %d\n", i - 1, datas->b[i-1]);
 		i++;
 	}
 }
@@ -41,9 +41,17 @@ void print_stacks(t_data *data)
 int main(int ac, char **av)
 {
 	t_data	*datas;
+	int	i;
 
+	i = 0;
 	datas = malloc(sizeof(t_data));
 	init_stack(av, datas, ac);
-	mcountinit(datas);
+	pb(datas);
+	pb(datas);
 	print_stacks(datas);
+	while (datas->a_l != 0)
+	{
+		regfunc(datas);
+		print_stacks(datas);
+	}
 }

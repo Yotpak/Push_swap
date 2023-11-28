@@ -3,7 +3,7 @@ SRCS = main.c swaputils2.c swaputils3.c swaputils4.c swaputils5.c swaputils.c ut
 
 NAME = push_swap
 CC = gcc
-CFLAGS = -fsantitize=address
+CFLAGS = -Wall -Wextra -Werror
 RM = rm -rf
 LIBC = ar -rcs
 LIBFT = ./libft/libft.a

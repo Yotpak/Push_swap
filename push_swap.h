@@ -6,7 +6,7 @@
 /*   By: tbalci <tbalci@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/03 01:19:35 by tbalci            #+#    #+#             */
-/*   Updated: 2023/11/19 15:37:11 by tbalci           ###   ########.fr       */
+/*   Updated: 2023/11/28 18:17:31 by tbalci           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,5 +63,9 @@ int		second(t_data *datas, int index);
 int		minmove(t_data *datas);
 int		first(t_data *datas, int index);
 int		ft_args(t_data *datas, char **av);
+void	regfunc(t_data *datas);
+int	indexfuncb(t_data *datas);
+void	regfuncb(t_data *datas);
+
 
 #endif

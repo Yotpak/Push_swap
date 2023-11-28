@@ -6,7 +6,7 @@
 /*   By: tbalci <tbalci@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/18 19:51:10 by tbalci            #+#    #+#             */
-/*   Updated: 2023/11/18 23:19:12 by tbalci           ###   ########.fr       */
+/*   Updated: 2023/11/28 19:26:47 by tbalci           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,5 +37,63 @@ void	countfuncb(t_data *datas, int index)
 		else
 			datas->rrb_c++;
 		index--;
+	}
+}
+
+int	indexfuncb(t_data *datas)
+{
+	int	i;
+	int	j;
+
+	i = 0;
+	j = minmove(datas);
+	bmin(datas);
+	if (datas->a[j] > datas->b_min)
+	{
+		i = ftl(datas, datas->a[j]);
+	}
+	else
+	{
+		i = ftm(datas);
+	}
+	return (i);
+}
+
+void	regfunc(t_data *datas)
+{
+	int	i;
+	int	j;
+
+	i = 0;
+	j = minmove(datas);
+	while (j != 0)
+	{
+		if (datas->a_l / 2 >= j)
+			ra(datas);
+		else
+			rra(datas);
+		j--;
+	}
+	i++;
+	regfuncb(datas);
+	pb(datas);
+}
+
+
+void	regfuncb(t_data *datas)
+{
+	int	i;
+	int	j;
+
+	i = 0;
+	j = indexfuncb(datas);
+	while (j != 0)
+	{
+		
+		if (datas->b_l / 2 >= j)
+			rb(datas);
+		else
+			rrb(datas);
+		j--;
 	}
 }

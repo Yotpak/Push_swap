@@ -6,7 +6,7 @@
 /*   By: tbalci <tbalci@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/08 01:20:35 by tbalci            #+#    #+#             */
-/*   Updated: 2023/11/21 04:02:25 by tbalci           ###   ########.fr       */
+/*   Updated: 2023/11/28 19:23:38 by tbalci           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,7 +61,7 @@ int	ftl(t_data *datas, int index)
 	temp = datas->b_min;
 	while (datas->b_l > i)
 	{
-		if (temp < datas->b[i] && index > datas->b[i])
+		if (temp <= datas->b[i] && index > datas->b[i])
 		{
 			temp = datas->b[i];
 			j = i;
