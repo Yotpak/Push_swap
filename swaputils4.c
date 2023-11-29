@@ -34,7 +34,7 @@ int	minmove(t_data *datas)
 	int	i;
 	int	j;
 
-	i = 0;
+	i = 1;
 	j = 0;
 	temp = datas->mcount[0];
 	while (datas->a_l > i)
@@ -47,4 +47,49 @@ int	minmove(t_data *datas)
 		i++;
 	}
 	return (j);
+}
+
+void	bmax(t_data *datas)
+{
+	int	i;
+	int	temp;
+
+	i = 1;
+	temp = datas->b[0];
+	while (datas->b_l > i)
+	{
+		if (datas->b[i] > temp)
+		{
+			datas->b_max = i;
+			temp = datas->b[i];
+		}
+		i++;
+	}
+}
+
+void	b_regulator2(t_data *datas)
+{
+	int	i;
+	int	j;
+
+	i = 0;
+	bmax(datas);
+	j = datas->b_max;
+	if (datas->b_l / 2 >= j)
+	{
+		while (j != 0)
+		{
+			rb(datas);
+			j--;
+		}
+	}
+	else
+	{
+		j = datas->b_l - j;
+		while (j != 0)
+		{
+			rrb(datas);
+			j--;
+		}
+	}
 }

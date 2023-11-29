@@ -38,6 +38,16 @@ void print_stacks(t_data *datas)
 	}
 }
 
+void	mcountprintf(t_data *datas)
+{
+	int	i = 1;
+	while (datas->a_l > i)
+	{
+		printf("%d. index %d\n",i - 1,datas->mcount[i - 1]);
+		i++;
+	}
+}
+
 int main(int ac, char **av)
 {
 	t_data	*datas;
@@ -48,10 +58,13 @@ int main(int ac, char **av)
 	init_stack(av, datas, ac);
 	pb(datas);
 	pb(datas);
-	print_stacks(datas);
 	while (datas->a_l != 0)
 	{
+		mcountinit(datas);
+		mcountprintf(datas);
 		regfunc(datas);
-		print_stacks(datas);
 	}
+	print_stacks(datas);
+	b_regulator2(datas);
+	print_stacks(datas);
 }

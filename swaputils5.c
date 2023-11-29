@@ -66,15 +66,24 @@ void	regfunc(t_data *datas)
 
 	i = 0;
 	j = minmove(datas);
-	while (j != 0)
+	printf("minmove değeri = %d\n",j);
+	if (datas->a_l / 2 >= j)
 	{
-		if (datas->a_l / 2 >= j)
+		while (j != 0)
+		{
 			ra(datas);
-		else
-			rra(datas);
-		j--;
+			j--;
+		}
 	}
-	i++;
+	else
+	{
+		j = datas->a_l - j;
+		while (j != 0)
+		{
+			rra(datas);
+			j--;
+		}
+	}
 	regfuncb(datas);
 	pb(datas);
 }
@@ -87,13 +96,21 @@ void	regfuncb(t_data *datas)
 
 	i = 0;
 	j = indexfuncb(datas);
-	while (j != 0)
+	if (datas->b_l / 2 >= j)
 	{
-		
-		if (datas->b_l / 2 >= j)
+		while (j != 0)
+		{
 			rb(datas);
-		else
+			j--;
+		}
+	}
+	else
+	{
+		j = datas->b_l - j;
+		while (j != 0)
+		{
 			rrb(datas);
-		j--;
+			j--;
+		}
 	}
 }
