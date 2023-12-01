@@ -99,7 +99,7 @@ void	mcountinit(t_data *datas)
 	int	temp_m;
 
 	i = 0;
-	while (datas->a_l > i)
+	while (datas->a_l >= i)
 	{
 		bmin(datas);
 		if (datas->a[i] > datas->b_min)

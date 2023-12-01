@@ -70,6 +70,7 @@ void	bmax(t_data *datas);
 void	regfuncb(t_data *datas);
 void	b_regulator2(t_data *datas);
 
+void print_stacks(t_data *datas);
 void	mcountprintf(t_data *datas);
 
 #endif

@@ -46,6 +46,7 @@ int	indexfuncb(t_data *datas)
 	int	j;
 
 	i = 0;
+	mcountinit(datas);
 	j = minmove(datas);
 	bmin(datas);
 	if (datas->a[j] > datas->b_min)
@@ -66,7 +67,6 @@ void	regfunc(t_data *datas)
 
 	i = 0;
 	j = minmove(datas);
-	printf("minmove değeri = %d\n",j);
 	if (datas->a_l / 2 >= j)
 	{
 		while (j != 0)
