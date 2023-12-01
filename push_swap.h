@@ -6,7 +6,7 @@
 /*   By: tbalci <tbalci@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/03 01:19:35 by tbalci            #+#    #+#             */
-/*   Updated: 2023/11/28 18:17:31 by tbalci           ###   ########.fr       */
+/*   Updated: 2023/12/02 00:54:54 by tbalci           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,6 +69,8 @@ int	indexfuncb(t_data *datas);
 void	bmax(t_data *datas);
 void	regfuncb(t_data *datas);
 void	b_regulator2(t_data *datas);
+void	sorting(t_data *datas);
+void	sortingrrr(t_data *datas);
 
 void print_stacks(t_data *datas);
 void	mcountprintf(t_data *datas);

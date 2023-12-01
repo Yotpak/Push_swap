@@ -6,7 +6,7 @@
 /*   By: tbalci <tbalci@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/08 01:20:35 by tbalci            #+#    #+#             */
-/*   Updated: 2023/11/28 19:23:38 by tbalci           ###   ########.fr       */
+/*   Updated: 2023/12/02 00:58:07 by tbalci           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,16 +17,16 @@ void	rrr(t_data *datas)
 	int	temp;
 	int	i;
 
-	i = datas->ac - 1;
-	temp = datas->a[datas->ac - 1];
-	while (0 < i)
+	i = datas->a_l;
+	temp = datas->a[datas->a_l - 1];
+	while (i > 0)
 	{
 		datas->a[i] = datas->a[i - 1];
 		i--;
 	}
 	datas->a[0] = temp;
-	i = datas->ac - 1;
-	temp = datas->b[i];
+	i = datas->b_l;
+	temp = datas->b[i - 1];
 	while (i > 0)
 	{
 		datas->b[i] = datas->b[i - 1];

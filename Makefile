@@ -1,4 +1,4 @@
-SRCS = main.c swaputils2.c swaputils3.c swaputils4.c swaputils5.c swaputils.c utils.c init.c
+SRCS = main.c swaputils2.c swaputils3.c swaputils4.c swaputils5.c swaputils.c utils.c init.c count.c
 
 
 NAME = push_swap

@@ -6,7 +6,7 @@
 /*   By: tbalci <tbalci@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/18 19:51:10 by tbalci            #+#    #+#             */
-/*   Updated: 2023/12/01 19:05:45 by tbalci           ###   ########.fr       */
+/*   Updated: 2023/12/02 00:45:38 by tbalci           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,13 +16,16 @@ void	countfunca(t_data *datas, int index)
 {
 	datas->ra_c = 0;
 	datas->rra_c = 0;
-	while (index)
+	if (index <= (datas->a_l / 2))
 	{
-		if (index <= (datas->a_l / 2))
+		while (index--)
 			datas->ra_c++;
-		else
+	}
+	else
+	{
+		index = datas->a_l - index;
+		while (index--)
 			datas->rra_c++;
-		index--;
 	}
 }
 
@@ -30,13 +33,16 @@ void	countfuncb(t_data *datas, int index)
 {
 	datas->rb_c = 0;
 	datas->rrb_c = 0;
-	while (index)
+	if (index <= (datas->b_l / 2))
 	{
-		if (index <= (datas->b_l / 2))
+		while (index--)
 			datas->rb_c++;
-		else
+	}
+	else
+	{
+		index = datas->b_l - index;
+		while (index--)
 			datas->rrb_c++;
-		index--;
 	}
 }
 
@@ -66,23 +72,18 @@ void	regfunc(t_data *datas)
 	int	j;
 
 	i = 0;
+	mcountinit(datas);
 	j = minmove(datas);
 	if (datas->a_l / 2 >= j)
 	{
-		while (j != 0)
-		{
+		while (j--)
 			ra(datas);
-			j--;
-		}
 	}
 	else
 	{
 		j = datas->a_l - j;
-		while (j != 0)
-		{
+		while (j--)
 			rra(datas);
-			j--;
-		}
 	}
 	regfuncb(datas);
 	pb(datas);

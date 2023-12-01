@@ -6,7 +6,7 @@
 /*   By: tbalci <tbalci@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/02 21:46:36 by tbalci            #+#    #+#             */
-/*   Updated: 2023/12/01 19:08:09 by tbalci           ###   ########.fr       */
+/*   Updated: 2023/12/02 01:01:08 by tbalci           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,8 @@ void	sort(t_data *datas)
 	pb(datas);
 	while (datas->a_l != 0)
 	{
-		mcountinit(datas);
+		sorting(datas);
+		sortingrrr(datas);
 		regfunc(datas);
 	}
 	b_regulator2(datas);
