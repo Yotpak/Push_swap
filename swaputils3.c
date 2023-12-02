@@ -105,7 +105,7 @@ void	mcountinit(t_data *datas)
 		if (datas->a[i] > datas->b_min)
 		{
 			temp_i = ftl(datas, datas->a[i]);
-			datas->mcount[i] = first(datas, i) + 1 + second(datas, temp_i);
+			datas->mcount[i] = first(datas, i) + 1 + second(datas, temp_i) - rrmovement(datas, i, temp_i);
 		}
 		else
 		{

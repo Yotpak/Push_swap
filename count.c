@@ -47,3 +47,26 @@ void	sortingrrr(t_data *datas)
 		datas->rrb_c--;
 	}
 }
+
+int	rrmovement(t_data *datas, int i, int temp_i)
+{
+	int	q;
+
+	q = 0;
+	countfunca(datas, i);
+	countfuncb(datas, temp_i);
+	while (datas->rra_c != 0 && datas->rrb_c != 0)
+	{
+		datas->rra_c--;
+		datas->rrb_c--;
+		q++;
+	}
+	while (datas->ra_c != 0 && datas->rb_c != 0)
+	{
+		datas->ra_c--;	
+		datas->rb_c--;
+		q++;
+	}
+	return (q);
+}
+

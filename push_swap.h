@@ -65,14 +65,15 @@ int		minmove(t_data *datas);
 int		first(t_data *datas, int index);
 int		ft_args(t_data *datas, char **av);
 void	regfunc(t_data *datas);
-int	indexfuncb(t_data *datas);
+int		indexfuncb(t_data *datas);
 void	bmax(t_data *datas);
 void	regfuncb(t_data *datas);
 void	b_regulator2(t_data *datas);
 void	sorting(t_data *datas);
+int	rrmovement(t_data *datas, int i, int temp_i);
 void	sortingrrr(t_data *datas);
 
-void print_stacks(t_data *datas);
+void	print_stacks(t_data *datas);
 void	mcountprintf(t_data *datas);
 
 #endif
