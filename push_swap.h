@@ -6,7 +6,7 @@
 /*   By: tbalci <tbalci@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/03 01:19:35 by tbalci            #+#    #+#             */
-/*   Updated: 2023/12/02 00:54:54 by tbalci           ###   ########.fr       */
+/*   Updated: 2023/12/05 02:22:36 by tbalci           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,11 +35,13 @@ typedef struct s_data
 	int		rra_c;
 	int		rb_c;
 	int		rrb_c;
+	int		i;
+	int		j;
 }			t_data;
 
-void	init_stack(char **av, t_data *datas, int ac);
+void	init_stack(t_data *datas, char **av, char **str);
 void	mainregulator(t_data *datas, int i);
-void	init_all(t_data *datas, int ac);
+void	init_all(t_data *datas, char **av);
 void	sa(t_data *datas);
 void	sb(t_data *datas);
 void	ss(t_data *datas);
@@ -63,7 +65,6 @@ void	b_regulator(t_data *datas);
 int		second(t_data *datas, int index);
 int		minmove(t_data *datas);
 int		first(t_data *datas, int index);
-int		ft_args(t_data *datas, char **av);
 void	regfunc(t_data *datas);
 int		indexfuncb(t_data *datas);
 void	bmax(t_data *datas);
@@ -72,6 +73,14 @@ void	b_regulator2(t_data *datas);
 void	sorting(t_data *datas);
 int	rrmovement(t_data *datas, int i, int temp_i);
 void	sortingrrr(t_data *datas);
+void	ft_checkerror(t_data *datas, int ac, char **av);
+char	*ft_args(t_data *datas, char **av, int ac);
+int		dp_wc(char **s);
+char	*ft_strjoin2(char *s1, char *s2);
+int		is_pushswap(int c);
+
+void	free_str(char **str);
+void	free_argv(char *argv);
 
 void	print_stacks(t_data *datas);
 void	mcountprintf(t_data *datas);

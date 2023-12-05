@@ -6,7 +6,7 @@
 /*   By: tbalci <tbalci@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/02 21:46:36 by tbalci            #+#    #+#             */
-/*   Updated: 2023/12/02 01:01:08 by tbalci           ###   ########.fr       */
+/*   Updated: 2023/12/05 03:03:19 by tbalci           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,6 +65,6 @@ int main(int ac, char **av)
 
 	i = 0;
 	datas = malloc(sizeof(t_data));
-	init_stack(av, datas, ac);
+	ft_checkerror(datas, ac, av);
 	sort(datas);
 }
