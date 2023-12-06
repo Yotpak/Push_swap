@@ -6,7 +6,7 @@
 /*   By: tbalci <tbalci@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/02 22:17:08 by tbalci            #+#    #+#             */
-/*   Updated: 2023/12/05 03:06:27 by tbalci           ###   ########.fr       */
+/*   Updated: 2023/12/06 17:56:02 by tbalci           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ void	init_stack(t_data *datas, char **av, char **str)
 	init_all(datas, av);
 	while (datas->a_l > i)
 	{
-		datas->a[i] = ft_atoi(str[i]);
+		datas->a[i] = atoi_ft(str[i]);
 		i++;
 	}
 	i = 0;

@@ -6,7 +6,7 @@
 /*   By: tbalci <tbalci@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/03 01:19:35 by tbalci            #+#    #+#             */
-/*   Updated: 2023/12/05 02:22:36 by tbalci           ###   ########.fr       */
+/*   Updated: 2023/12/06 17:54:05 by tbalci           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,6 +81,10 @@ int		is_pushswap(int c);
 
 void	free_str(char **str);
 void	free_argv(char *argv);
+void	dupcontrol(t_data *datas);
+int		sortcontrol(t_data *datas);
+int		atoi_ft(char *str);
+
 
 void	print_stacks(t_data *datas);
 void	mcountprintf(t_data *datas);
