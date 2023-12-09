@@ -1,16 +1,16 @@
-SRCS = 	./Mandatory/errorfunc.c \
- 		./Mandatory/init.c \
- 		./Mandatory/main.c \
-		./Mandatory/movementcounter.c \
- 		./Mandatory/movementutils.c \
- 		./Mandatory/regulate.c \
- 		./Mandatory/rules.c \
- 		./Mandatory/rules2.c \
- 		./Mandatory/rulesutils.c \
- 		./Mandatory/sort.c \
-		./Mandatory/littlesort.c \
- 		./Mandatory/utils.c \
-
+SRCS = 	errorfunc.c \
+ 		init.c \
+ 		main.c \
+		movementcounter.c \
+ 		movementutils.c \
+ 		regulate.c \
+ 		rules.c \
+ 		rules2.c \
+ 		rulesutils.c \
+ 		sort.c \
+		littlesort.c \
+ 		utils.c
+ 
 NAME = push_swap
 CC = gcc
 CFLAGS = -Wall -Wextra -Werror 
@@ -20,22 +20,25 @@ LIBFT = ./libft/libft.a
 
 OBJS = ${SRCS:.c=.o}
 
-$(NAME): $(SRCS) $(LIBFT) $(OBSJ)
-	@$(CC) $(CFLAGS) $(SRCS) $(LIBFT) -o $(NAME)
+$(NAME): $(OBJS) $(LIBFT)
+	@$(CC) $(CFLAGS) $(OBJS) $(LIBFT) -o $(NAME)
+	@echo "$(NAME) compiled successfully!"
 
 all: $(NAME)
 
 clean:
-	@rm -rf $(NAME)
-	@rm -rf $(OBJS)
-	@rm -rf $(LIBFT)
+	@$(RM) $(OBJS)
+	@$(MAKE) -C ./libft clean
+	@echo "Object files cleaned."
 
 fclean: clean
-	@rm -rf $(LIBC)
+	@$(RM) $(NAME)
+	@$(MAKE) -C ./libft fclean
+	@echo "$(NAME) and object files cleaned."
 
 re: fclean all
 
 $(LIBFT):
-	@make -C ./libft
+	@$(MAKE) -C ./libft
 
 .PHONY: all clean fclean re

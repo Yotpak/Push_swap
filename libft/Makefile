@@ -53,20 +53,21 @@ OBJS_BONUS = $(bonus:.c=.o)
 all: $(NAME)
 
 .c.o:
-	$(CC) -c $(CFLAGS) $<
+	@$(CC) -c $(CFLAGS) $<
 
 $(NAME): $(OBJS)
-	ar -rc $(NAME) $(OBJS)
+	@ar -rc $(NAME) $(OBJS)
 
 clean:
-	rm -f $(OBJS)
+	@rm -f $(OBJS)
+	@rm -f $(OBJS_BONUS)
 
 fclean: clean
-	rm -f $(NAME)
+	@rm -f $(NAME)
 
-re:fclean $(NAME)
+re: fclean all
 
-bonus: $(OBJS) $(OBJS_BONUS)
-	ar -rcs $(NAME) $(OBJS_BONUS) $(OBJS)
+bonus: $(OBJS_BONUS) $(OBJS)
+	@ar -rcs $(NAME) $(OBJS_BONUS) $(OBJS)
 
 .PHONY: clean fclean all re
