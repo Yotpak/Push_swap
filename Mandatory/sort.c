@@ -1,73 +1,51 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   count.c                                            :+:      :+:    :+:   */
+/*   sort.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tbalci <tbalci@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/01 17:17:08 by tbalci            #+#    #+#             */
-/*   Updated: 2023/12/06 17:56:27 by tbalci           ###   ########.fr       */
+/*   Updated: 2023/12/08 20:54:43 by tbalci           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	sorting(t_data *datas)
+void	sorting(t_data *s)
 {
 	int	i;
 	int	j;
 
-	mcountinit(datas);
-	i = minmove(datas);
-	j = indexfuncb(datas);
-	countfunca(datas, i);
-	countfuncb(datas, j);
-	while (datas->ra_c != 0 && datas->rb_c != 0)
+	mcountinit(s);
+	i = minmove(s);
+	j = minmoveb(s);
+	countfunca(s, i);
+	countfuncb(s, j);
+	while (s->ra_c != 0 && s->rb_c != 0)
 	{
-		rr(datas);
-		datas->ra_c--;
-		datas->rb_c--;
+		rr(s);
+		s->ra_c--;
+		s->rb_c--;
 	}
 }
 
-void	sortingrrr(t_data *datas)
+void	sortingrrr(t_data *s)
 {
 	int	i;
 	int	j;
 
-	mcountinit(datas);
-	i = minmove(datas);
-	j = indexfuncb(datas);
-	countfunca(datas, i);
-	countfuncb(datas, j);
-	while (datas->rra_c != 0 && datas->rrb_c != 0)
+	mcountinit(s);
+	i = minmove(s);
+	j = minmoveb(s);
+	countfunca(s, i);
+	countfuncb(s, j);
+	while (s->rra_c != 0 && s->rrb_c != 0)
 	{
-		rrr(datas);
-		datas->rra_c--;
-		datas->rrb_c--;
+		rrr(s);
+		s->rra_c--;
+		s->rrb_c--;
 	}
-}
-
-int	rrmovement(t_data *datas, int i, int temp_i)
-{
-	int	q;
-
-	q = 0;
-	countfunca(datas, i);
-	countfuncb(datas, temp_i);
-	while (datas->rra_c != 0 && datas->rrb_c != 0)
-	{
-		datas->rra_c--;
-		datas->rrb_c--;
-		q++;
-	}
-	while (datas->ra_c != 0 && datas->rb_c != 0)
-	{
-		datas->ra_c--;	
-		datas->rb_c--;
-		q++;
-	}
-	return (q);
 }
 
 int	atoi_ft(char *str)
@@ -98,4 +76,3 @@ int	atoi_ft(char *str)
 	}
 	return (result * sign);
 }
-

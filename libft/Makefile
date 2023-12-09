@@ -56,7 +56,7 @@ all: $(NAME)
 	$(CC) -c $(CFLAGS) $<
 
 $(NAME): $(OBJS)
-	ar -rcs $(NAME) $(OBJS)
+	ar -rc $(NAME) $(OBJS)
 
 clean:
 	rm -f $(OBJS)

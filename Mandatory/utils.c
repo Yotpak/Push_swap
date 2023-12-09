@@ -6,35 +6,11 @@
 /*   By: tbalci <tbalci@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/02 21:47:51 by tbalci            #+#    #+#             */
-/*   Updated: 2023/12/05 02:29:56 by tbalci           ###   ########.fr       */
+/*   Updated: 2023/12/08 21:03:57 by tbalci           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-
-void	a_regulator(t_data *datas)
-{
-	int	i;
-
-	i = 0;
-	while (i < datas->a_l)
-	{
-		datas->a[i] = datas->a[i + 1];
-		i++;
-	}
-}
-
-void	b_regulator(t_data *datas)
-{
-	int	i;
-
-	i = 0;
-	while (i < datas->b_l)
-	{
-		datas->b[i] = datas->b[i + 1];
-		i++;
-	}
-}
 
 int	dp_wc(char **s)
 {
@@ -87,4 +63,20 @@ int	is_pushswap(int c)
 	if (ft_isdigit(c) || c == '+' || c == '-' || c == ' ')
 		return (1);
 	return (0);
+}
+
+int	a_min(t_data *s)
+{
+	int	i;
+	int	index;
+
+	i = 1;
+	index = 0;
+	while (i < s->a_l)
+	{
+		if (s->a[index] > s->a[i])
+			index = i;
+		i++;
+	}
+	return (index);
 }

@@ -1,5 +1,15 @@
-SRCS = main.c swaputils2.c swaputils3.c swaputils4.c swaputils5.c swaputils.c utils.c init.c count.c errorfunc.c
-
+SRCS = 	./Mandatory/errorfunc.c \
+ 		./Mandatory/init.c \
+ 		./Mandatory/main.c \
+		./Mandatory/movementcounter.c \
+ 		./Mandatory/movementutils.c \
+ 		./Mandatory/regulate.c \
+ 		./Mandatory/rules.c \
+ 		./Mandatory/rules2.c \
+ 		./Mandatory/rulesutils.c \
+ 		./Mandatory/sort.c \
+		./Mandatory/littlesort.c \
+ 		./Mandatory/utils.c \
 
 NAME = push_swap
 CC = gcc
@@ -8,13 +18,16 @@ RM = rm -rf
 LIBC = ar -rcs
 LIBFT = ./libft/libft.a
 
-all: $(NAME)
+OBJS = ${SRCS:.c=.o}
 
-$(NAME): $(SRCS) $(LIBFT)
-	@$(CC) $(CFLAGS) $(SRCS) ./libft/libft.a -o $(NAME)
+$(NAME): $(SRCS) $(LIBFT) $(OBSJ)
+	@$(CC) $(CFLAGS) $(SRCS) $(LIBFT) -o $(NAME)
+
+all: $(NAME)
 
 clean:
 	@rm -rf $(NAME)
+	@rm -rf $(OBJS)
 	@rm -rf $(LIBFT)
 
 fclean: clean

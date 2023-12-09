@@ -1,34 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   swaputils4.c                                       :+:      :+:    :+:   */
+/*   movementutils.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tbalci <tbalci@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/17 22:44:29 by tbalci            #+#    #+#             */
-/*   Updated: 2023/12/02 00:08:24 by tbalci           ###   ########.fr       */
+/*   Updated: 2023/12/08 20:53:50 by tbalci           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	first(t_data *datas, int index)
+int	first(t_data *s, int index)
 {
-	if ((datas->a_l / 2) >= index)
+	if ((s->a_l / 2) >= index)
 		return (index);
 	else
-		return (datas->a_l - index);
+		return (s->a_l - index);
 }
 
-int	second(t_data *datas, int index)
+int	second(t_data *s, int index)
 {
-	if ((datas->b_l / 2) >= index)
+	if ((s->b_l / 2) >= index)
 		return (index);
 	else
-		return (datas->b_l - index);
+		return (s->b_l - index);
 }
 
-int	minmove(t_data *datas)
+int	minmove(t_data *s)
 {
 	int	temp;
 	int	i;
@@ -36,12 +36,12 @@ int	minmove(t_data *datas)
 
 	i = 1;
 	j = 0;
-	temp = datas->mcount[0];
-	while (datas->a_l > i)
+	temp = s->mcount[0];
+	while (s->a_l > i)
 	{
-		if (temp > datas->mcount[i])
+		if (temp > s->mcount[i])
 		{
-			temp = datas->mcount[i];
+			temp = s->mcount[i];
 			j = i;
 		}
 		i++;
@@ -49,47 +49,34 @@ int	minmove(t_data *datas)
 	return (j);
 }
 
-void	bmax(t_data *datas)
+void	bmax(t_data *s)
 {
 	int	i;
 	int	temp;
 
 	i = 1;
-	temp = datas->b[0];
-	while (datas->b_l > i)
+	temp = s->b[0];
+	while (s->b_l > i)
 	{
-		if (datas->b[i] > temp)
+		if (s->b[i] > temp)
 		{
-			datas->b_max = i;
-			temp = datas->b[i];
+			s->b_max = i;
+			temp = s->b[i];
 		}
 		i++;
 	}
 }
 
-void	b_regulator2(t_data *datas)
+void	bmin(t_data *s)
 {
 	int	i;
-	int	j;
 
 	i = 0;
-	bmax(datas);
-	j = datas->b_max;
-	if (datas->b_l / 2 >= j)
+	s->b_min = s->b[0];
+	while (i < s->b_l)
 	{
-		while (j != 0)
-		{
-			rb(datas);
-			j--;
-		}
-	}
-	else
-	{
-		j = datas->b_l - j;
-		while (j != 0)
-		{
-			rrb(datas);
-			j--;
-		}
+		if (s->b[i] < s->b_min)
+			s->b_min = s->b[i];
+		i++;
 	}
 }

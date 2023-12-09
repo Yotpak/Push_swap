@@ -6,7 +6,7 @@
 /*   By: tbalci <tbalci@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/18 01:48:02 by tbalci            #+#    #+#             */
-/*   Updated: 2023/12/05 02:41:42 by tbalci           ###   ########.fr       */
+/*   Updated: 2023/12/08 20:53:09 by tbalci           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,11 +38,11 @@ void	free_str(char **str)
 
 void	free_argv(char *argv)
 {
-	free(argv);
+	free(argv);	
 	errorfunc("Error");
 }
 
-char	*ft_args(t_data *datas, char **av, int ac)
+char	*ft_args(t_data *s, char **av, int ac)
 {
 	char	**str;
 	char	*chr;
@@ -57,19 +57,19 @@ char	*ft_args(t_data *datas, char **av, int ac)
 		j++;
 	}
 	str = ft_split(chr, ' ');
-	init_stack(datas, av, str);
+	init_stack(s, av, str);
 	free_str(str);
 	return (chr);
 }
 
 
-void	ft_checkerror(t_data *datas, int ac, char **av)
+void	ft_checkerror(t_data *s, int ac, char **av)
 {
 	char	*argv;
 	int	i;
 
 	i = -1;
-	argv = ft_args(datas, av, ac);
+	argv = ft_args(s, av, ac);
 	while (argv[++i])
 	{
 		if (!is_pushswap(argv[i]))

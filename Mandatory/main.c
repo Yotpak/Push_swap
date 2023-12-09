@@ -6,40 +6,46 @@
 /*   By: tbalci <tbalci@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/02 21:46:36 by tbalci            #+#    #+#             */
-/*   Updated: 2023/12/06 18:03:10 by tbalci           ###   ########.fr       */
+/*   Updated: 2023/12/08 21:00:18 by tbalci           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-#include <stdio.h>
 
-void	sort(t_data *datas)
+void	sort(t_data *s)
 {
-	pb(datas);
-	pb(datas);
-	while (datas->a_l != 0)
+	if (s->a_l > 5)
 	{
-		sorting(datas);
-		sortingrrr(datas);
-		regfunc(datas);
+		pb(s);
+		pb(s);
+		while (s->a_l != 0)
+		{
+			sorting(s);
+			sortingrrr(s);
+			regfunc(s);
+		}
+		reset_b(s);
+		while (s->b_l != 0)
+			pa(s);
 	}
-	b_regulator2(datas);
-	while (datas->b_l != 0)
-		pa(datas);
+	else;
+	{
+		littlesort(s);
+	}
 }
 
-void	dupcontrol(t_data *datas)
+void	dupcontrol(t_data *s)
 {
 	int	i;
 	int	j;
 
 	i = 0;
-	while (datas->a_l > i)
+	while (s->a_l > i)
 	{
 		j = i + 1;
-		while (datas->a_l > j)
+		while (s->a_l > j)
 		{	
-			if (datas->a[i] == datas->a[j])
+			if (s->a[i] == s->a[j])
 				errorfunc("Error");
 			j++;
 		}
@@ -47,60 +53,60 @@ void	dupcontrol(t_data *datas)
 	}
 }
 
-int	sortcontrol(t_data *datas)
+int	sortcontrol(t_data *s)
 {
 	int	i;
 	
 	i = 0;
-	while (datas->a_l - 1 > i)
+	while (s->a_l - 1 > i)
 	{
-		if (datas->a[i] > datas->a[i + 1])
+		if (s->a[i] > s->a[i + 1])
 			return (1);
 		i++;
 	}
 	return (0);
 }
 
-void print_stacks(t_data *datas)
+void print_stacks(t_data *s)
 {
 	int i = 1;
 	printf("	STACK A		\n---------------------\n");
-	while (i <= datas->a_l)
+	while (i <= s->a_l)
 	{
-		printf("%d. index -> %d\n", i - 1, datas->a[i-1]);
+		printf("%d. index -> %d\n", i - 1, s->a[i-1]);
 		i++;
 	}
 
 	i = 1;
 	printf("	STACK B		\n---------------------\n");
-	while (i <= datas->b_l)
+	while (i <= s->b_l)
 	{
-		printf("%d. index -> %d\n", i - 1, datas->b[i-1]);
+		printf("%d. index -> %d\n", i - 1, s->b[i-1]);
 		i++;
 	}
 }
 
-void	mcountprintf(t_data *datas)
+void	mcountprintf(t_data *s)
 {
 	int	i = 1;
-	while (datas->a_l >= i)
+	while (s->a_l >= i)
 	{
-		printf("%d. index %d\n",i - 1,datas->mcount[i - 1]);
+		printf("%d. index %d\n",i - 1,s->mcount[i - 1]);
 		i++;
 	}
 }
 
 int main(int ac, char **av)
 {
-	t_data	*datas;
+	t_data	*s;
 	int	i;
 
 	i = 0;
-	datas = malloc(sizeof(t_data));
-	ft_checkerror(datas, ac, av);
-	dupcontrol(datas);
-	if (sortcontrol(datas) == 0)
+	s = malloc(sizeof(t_data));
+	ft_checkerror(s, ac, av);
+	dupcontrol(s);
+	if (sortcontrol(s) == 0)
 		return (0);
-	sort(datas);
-	// print_stacks(datas);
+	sort(s);
+	// print_stacks(s);
 }

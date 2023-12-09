@@ -1,44 +1,61 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   init.c                                             :+:      :+:    :+:   */
+/*   rulesutils.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tbalci <tbalci@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/02 22:17:08 by tbalci            #+#    #+#             */
-/*   Updated: 2023/12/06 17:56:02 by tbalci           ###   ########.fr       */
+/*   Created: 2023/12/08 16:04:55 by tbalci            #+#    #+#             */
+/*   Updated: 2023/12/08 20:54:34 by tbalci           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-#include <stdio.h>
 
-
-void	init_all(t_data *datas, char **av)
+void	rrr(t_data *s)
 {
-	datas->a_l = dp_wc(av) - 1;
-	datas->b_l = 0;
-	datas->a = malloc(sizeof(int) * datas->a_l);
-	datas->b = malloc(sizeof(int) * datas->a_l);
-	datas->mcount = malloc(sizeof(int) * datas->a_l);
+	int	temp;
+	int	i;
+
+	i = s->a_l;
+	temp = s->a[s->a_l - 1];
+	while (i > 0)
+	{
+		s->a[i] = s->a[i - 1];
+		i--;
+	}
+	s->a[0] = temp;
+	i = s->b_l;
+	temp = s->b[i - 1];
+	while (i > 0)
+	{
+		s->b[i] = s->b[i - 1];
+		i--;
+	}
+	s->b[0] = temp;
+	write(1, "rrr\n", 4);
 }
 
-void	init_stack(t_data *datas, char **av, char **str)
+void	a_regulator(t_data *s)
 {
 	int	i;
-	
+
 	i = 0;
-	init_all(datas, av);
-	while (datas->a_l > i)
+	while (i < s->a_l)
 	{
-		datas->a[i] = atoi_ft(str[i]);
+		s->a[i] = s->a[i + 1];
 		i++;
 	}
+}
+
+void	b_regulator(t_data *s)
+{
+	int	i;
+
 	i = 0;
-	while (datas->a_l > i)
+	while (i < s->b_l)
 	{
-		if (datas->a[i] >= 2147483647)
-			errorfunc("Error");
+		s->b[i] = s->b[i + 1];
 		i++;
 	}
 }
