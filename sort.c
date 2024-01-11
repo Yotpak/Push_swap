@@ -6,12 +6,12 @@
 /*   By: tbalci <tbalci@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/01 17:17:08 by tbalci            #+#    #+#             */
-/*   Updated: 2023/12/09 15:46:45 by tbalci           ###   ########.fr       */
+/*   Updated: 2023/12/12 14:56:34 by tbalci           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
- 
+
 void	sorting(t_data *s)
 {
 	int	i;
@@ -70,7 +70,7 @@ int	atoi_ft(char *str)
 	{
 		result = (result * 10) + (str[a] - '0');
 		temp = result * sign;
-		if (temp >= 2147483647 || temp <= -2147483648)
+		if (temp > 2147483647 || temp < -2147483648)
 			errorfunc("Error");
 		a++;
 	}

@@ -6,12 +6,12 @@
 /*   By: tbalci <tbalci@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/17 22:44:29 by tbalci            #+#    #+#             */
-/*   Updated: 2023/12/09 15:46:33 by tbalci           ###   ########.fr       */
+/*   Updated: 2023/12/09 15:18:45 by tbalci           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
- 
+
 int	first(t_data *s, int index)
 {
 	if ((s->a_l / 2) >= index)

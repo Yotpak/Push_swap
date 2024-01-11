@@ -10,7 +10,7 @@ SRCS = 	errorfunc.c \
  		sort.c \
 		littlesort.c \
  		utils.c
- 
+
 NAME = push_swap
 CC = gcc
 CFLAGS = -Wall -Wextra -Werror 

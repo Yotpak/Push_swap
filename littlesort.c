@@ -6,12 +6,12 @@
 /*   By: tbalci <tbalci@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/08 20:51:34 by tbalci            #+#    #+#             */
-/*   Updated: 2023/12/09 15:46:26 by tbalci           ###   ########.fr       */
+/*   Updated: 2023/12/09 15:15:14 by tbalci           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
- 
+
 void	littlesorttwo(t_data *s)
 {
 	if (s->a[0] > s->a[1])

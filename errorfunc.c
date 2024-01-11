@@ -6,12 +6,12 @@
 /*   By: tbalci <tbalci@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/18 01:48:02 by tbalci            #+#    #+#             */
-/*   Updated: 2023/12/09 15:46:22 by tbalci           ###   ########.fr       */
+/*   Updated: 2023/12/12 16:02:45 by tbalci           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
- 
+
 void	errorfunc(char *str)
 {
 	int	i;

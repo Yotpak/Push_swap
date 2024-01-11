@@ -6,12 +6,12 @@
 /*   By: tbalci <tbalci@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/02 22:17:08 by tbalci            #+#    #+#             */
-/*   Updated: 2023/12/09 15:46:24 by tbalci           ###   ########.fr       */
+/*   Updated: 2023/12/12 14:59:23 by tbalci           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
- 
+
 void	init_all(t_data *s, char **av)
 {
 	s->a_l = dp_wc(av) - 1;
@@ -33,12 +33,6 @@ void	init_stack(t_data *s, char **av, char **str)
 		i++;
 	}
 	i = 0;
-	while (s->a_l > i)
-	{
-		if (s->a[i] >= 2147483647)
-			errorfunc("Error");
-		i++;
-	}
 }
 
 void	countfunca(t_data *s, int index)

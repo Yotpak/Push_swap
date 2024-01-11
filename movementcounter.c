@@ -6,12 +6,12 @@
 /*   By: tbalci <tbalci@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/08 01:20:35 by tbalci            #+#    #+#             */
-/*   Updated: 2023/12/09 15:46:31 by tbalci           ###   ########.fr       */
+/*   Updated: 2023/12/09 15:18:37 by tbalci           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
- 
+
 int	rrmovement(t_data *s, int i, int temp_i)
 {
 	int	q;

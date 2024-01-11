@@ -6,12 +6,12 @@
 /*   By: tbalci <tbalci@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/02 21:47:51 by tbalci            #+#    #+#             */
-/*   Updated: 2023/12/09 15:46:46 by tbalci           ###   ########.fr       */
+/*   Updated: 2023/12/08 21:03:57 by tbalci           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
- 
+
 int	dp_wc(char **s)
 {
 	int	word_number;

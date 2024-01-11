@@ -6,13 +6,13 @@
 /*   By: tbalci <tbalci@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/03 01:19:35 by tbalci            #+#    #+#             */
-/*   Updated: 2023/12/09 15:46:34 by tbalci           ###   ########.fr       */
+/*   Updated: 2023/12/09 15:28:26 by tbalci           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
- 
+
 # include <stdlib.h>
 # include <unistd.h>
 # include "./libft/libft.h"

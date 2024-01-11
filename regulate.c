@@ -6,12 +6,12 @@
 /*   By: tbalci <tbalci@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/18 19:51:10 by tbalci            #+#    #+#             */
-/*   Updated: 2023/12/09 15:46:35 by tbalci           ###   ########.fr       */
+/*   Updated: 2023/12/09 15:20:03 by tbalci           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
- 
+
 int	minmoveb(t_data *s)
 {
 	int	i;

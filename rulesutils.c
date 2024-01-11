@@ -6,12 +6,12 @@
 /*   By: tbalci <tbalci@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/08 16:04:55 by tbalci            #+#    #+#             */
-/*   Updated: 2023/12/09 15:46:43 by tbalci           ###   ########.fr       */
+/*   Updated: 2023/12/09 15:21:16 by tbalci           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
- 
+
 void	rrr(t_data *s)
 {
 	int	temp;
